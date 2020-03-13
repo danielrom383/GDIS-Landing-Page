@@ -1,0 +1,169 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/gdis.ico" type="icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Landing Page Title</title>
+    
+</head>
+<style>
+    .hiddenDetails{
+        display: none;
+    }
+    .hiddenCall{
+        display: none;
+    }
+
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+    input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+a[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+}
+
+    </style>
+    <script type="text/javascript">
+        function showHideDetails(){
+            var i=0;
+            var checkbox = document.getElementById("chkDetails");
+            var hiddenInputs = document.getElementsByClassName("hiddenDetails");
+            for( i=0 ; i != hiddenInputs.length; i++){
+                if (checkbox.checked){
+                    hiddenInputs[i].style.display = "inline";
+                }
+                else{
+                    hiddenInputs[i].style.display = "none";
+                }
+            }
+        }
+        function showHideCall(){
+            var j=0;
+            var checkbox = document.getElementById("chkCall");
+            var hiddenMakeACall = document.getElementsByClassName("hiddenCall");
+            for( j=0 ; j != hiddenMakeACall.length; i++){
+                if (checkbox.checked){
+                    hiddenMakeACall[j].style.display = "inline";
+                }
+                else{
+                    hiddenMakeACall[j].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+<body class="w3-light-grey">
+
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <div>
+        <div class="w3-white w3-text-grey w3-card-4" style="text-align: center;">
+            <div class="w3-container w3-light-blue"><h1>Do you suspect someone is eavesdropping  or trying to hack your mobile or computer?</h1></div></div>
+    </div>
+    <br>
+        
+      <!-- The Grid -->
+      <div class="w3-row-padding">
+      
+        <!-- Left Column -->
+        <div class="w3-third">
+        
+          <div class="w3-white w3-text-grey w3-card-4">
+           
+            <div class="w3-container" >
+                <form action="emailTo.php">
+                    <input type="checkbox" name="checkButton" id="chkDetails" onclick="showHideDetails()" hidden>
+                    <label for="chkDetails"><a type="submit">Leave your details and we will get back to you soon</a></label>
+                    <br class="hiddenDetails">
+                    <input class="hiddenDetails" type="text" name="firstname" placeholder="Your First Name..">
+                <br class="hiddenDetails">
+                    <input class="hiddenDetails" type="text" name="lastname" placeholder="Your Last Name..">
+                <br class="hiddenDetails">
+                    <input class="hiddenDetails" type="text" name="email" placeholder="Your Email..">
+                <br class="hiddenDetails">
+                    <input class="hiddenDetails" type="text" name="phone" placeholder="Your Phone..">
+                <br class="hiddenDetails">
+                    <select class="hiddenDetails" name="subject">
+                      <option value="" disabled selected hidden>Select Subject...</option>
+                      <option value="Cyber">Cyber</option>
+                      <option value="SecurityCameras">Security Cameras</option>
+                      <option value="Intercom">Intercom</option>
+                      <option value="Alarms">Alarms</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <br class="hiddenDetails">
+                    <input class="hiddenDetails" type="submit" value="Send Details">
+                </form>
+                    <h4>Or</h4>
+                  
+                    <br class="hiddenCall">
+                    <a type="submit" href="tel:+972-52-557-7999" ><i class="fa fa-phone" aria-hidden="true"></i> Make A Call</a>
+        </div>
+              
+              
+              <br>
+            </div>
+          </div>
+    
+        <!-- End Left Column -->
+    
+        <!-- Right Column -->
+        <div class="w3-twothird">
+        
+          <div class="w3-container w3-card w3-white w3-margin-bottom" >
+            <div class="w3-display-container" style="margin: 2%;" >
+                <iframe style="width: 100%;height: 35%;" src="https://www.youtube.com/embed/1Ml4wyEdirc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+            </div>
+      
+      <!-- End Page Container -->
+    </div>
+    
+    <footer class="w3-container w3-light-blue w3-center w3-margin-top"  style="font-size:35px">
+      <p>Find me us social media.</p>
+      <i class="fa fa-facebook-official w3-hover-opacity"  style="font-size:35px"></i>
+      <i class="fa fa-linkedin-square w3-hover-opacity" style="font-size:35px"></i>
+    </footer>
+    </div>
+    </body>
+</html>
