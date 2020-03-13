@@ -110,13 +110,13 @@ div {
           <div class="w3-white w3-text-grey w3-card-4">
            
             <div class="w3-container" >
-                <form action="emailTo.php">
+              <!-- form for leaving details for sending them in email -->
+                <form method="post" name="contact_form"
+                action="contact-form-handler.php">
                     <input type="checkbox" name="checkButton" id="chkDetails" onclick="showHideDetails()" hidden>
                     <label for="chkDetails"><a type="submit">Leave your details and we will get back to you soon</a></label>
                     <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="text" name="firstname" placeholder="Your First Name..">
-                <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="text" name="lastname" placeholder="Your Last Name..">
+                    <input class="hiddenDetails" type="text" name="fullName" placeholder="Your Full Name..">
                 <br class="hiddenDetails">
                     <input class="hiddenDetails" type="text" name="email" placeholder="Your Email..">
                 <br class="hiddenDetails">
@@ -124,19 +124,31 @@ div {
                 <br class="hiddenDetails">
                     <select class="hiddenDetails" name="subject">
                       <option value="" disabled selected hidden>Select Subject...</option>
-                      <option value="Cyber">Cyber</option>
-                      <option value="SecurityCameras">Security Cameras</option>
-                      <option value="Intercom">Intercom</option>
-                      <option value="Alarms">Alarms</option>
-                      <option value="Other">Other</option>
+                      <option value="MOBILE TSCM SECURITY">MOBILE TSCM SECURITY</option>
+                      <option value="EAVESDROPPING SWEEP/MONITORING">EAVESDROPPING SWEEP/MONITORING</option>
+                      <option value="CYBER WARFARE">CYBER WARFARE</option>
+                      <option value="DATA SECURITY">DATA SECURITY</option>
+                      <option value="SECURITY SYSTEMS">SECURITY SYSTEMS</option>
+                      <option value="OTHER">OTHER</option>
                     </select>
                     <br class="hiddenDetails">
                     <input class="hiddenDetails" type="submit" value="Send Details">
                 </form>
+
+                <!-- Validating the form submission -->
+                <script language="JavaScript">
+                  var frmvalidator  = new Validator("contactform");
+                  frmvalidator.addValidation("name","req","Please provide your name");
+                  frmvalidator.addValidation("email","req","Please provide your email");
+                  frmvalidator.addValidation("email","email",
+                    "Please enter a valid email address");
+                  </script>
+
                     <h4>Or</h4>
-                  
-                    <br class="hiddenCall">
+              
                     <a type="submit" href="tel:+972-52-557-7999" ><i class="fa fa-phone" aria-hidden="true"></i> Make A Call</a>
+                    <br>
+                    <a type="submit" href="sms:+972-52-557-7999" ><i class="fa fa-phone" aria-hidden="true"></i> Make A Call</a>
         </div>
               
               
@@ -154,6 +166,7 @@ div {
                 <iframe style="width: 100%;height: 35%;" src="https://www.youtube.com/embed/1Ml4wyEdirc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
+            <!-- End Right Column -->
             </div>
       
       <!-- End Page Container -->
