@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +8,8 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Landing Page Title</title>
-    
+    <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
+
 </head>
 <style>
     .hiddenDetails{
@@ -17,7 +19,7 @@
         display: none;
     }
 
-    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+    html,body,h1,h2,h3,h4,h5,h6,pre {font-family: "Roboto", sans-serif}
     input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -97,7 +99,7 @@ div {
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
     <div>
         <div class="w3-white w3-text-grey w3-card-4" style="text-align: center;">
-            <div class="w3-container w3-light-blue"><h1>Do you suspect someone is eavesdropping  or trying to hack your mobile or computer?</h1></div></div>
+            <div class="w3-container w3-light-blue"><h1><pre>?האם אתה חושד שמישהו מצותת או מנסה לפרוץ את הנייד או המחשב שלך</pre></h1></div></div>
     </div>
     <br>
         
@@ -111,28 +113,27 @@ div {
            
             <div class="w3-container" >
               <!-- form for leaving details for sending them in email -->
-                <form method="post" name="contact_form"
-                action="contact-form-handler.php">
+                <form method="POST" name="contactform" action="contact-form-handler.php"  style="text-align: center;" >
                     <input type="checkbox" name="checkButton" id="chkDetails" onclick="showHideDetails()" hidden>
-                    <label for="chkDetails"><a type="submit">Leave your details and we will get back to you soon</a></label>
+                    <label for="chkDetails"><a type="submit">השאר פרטים ונחזור אלייך בהקדם</a></label>
                     <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="text" name="fullName" placeholder="Your Full Name..">
+                    <input class="hiddenDetails" type="text" name="name" placeholder="שם מלא..." required>
                 <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="text" name="email" placeholder="Your Email..">
+                    <input class="hiddenDetails" type="text" name="email" placeholder="כתובת מייל..." required>
                 <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="text" name="phone" placeholder="Your Phone..">
+                    <input class="hiddenDetails" type="text" name="message" placeholder="טלפון..." required>
                 <br class="hiddenDetails">
-                    <select class="hiddenDetails" name="subject">
-                      <option value="" disabled selected hidden>Select Subject...</option>
+                    <select class="hiddenDetails" name="subject" required>
+                      <option value="" disabled selected hidden>בחר נושא...</option>
                       <option value="MOBILE TSCM SECURITY">MOBILE TSCM SECURITY</option>
                       <option value="EAVESDROPPING SWEEP/MONITORING">EAVESDROPPING SWEEP/MONITORING</option>
                       <option value="CYBER WARFARE">CYBER WARFARE</option>
                       <option value="DATA SECURITY">DATA SECURITY</option>
                       <option value="SECURITY SYSTEMS">SECURITY SYSTEMS</option>
-                      <option value="OTHER">OTHER</option>
+                      <option value="OTHER">אחר</option>
                     </select>
                     <br class="hiddenDetails">
-                    <input class="hiddenDetails" type="submit" value="Send Details">
+                    <input class="hiddenDetails" type="submit" value="שלח טופס">
                 </form>
 
                 <!-- Validating the form submission -->
@@ -144,11 +145,14 @@ div {
                     "Please enter a valid email address");
                   </script>
 
-                    <h4>Or</h4>
+                    <h4 style="text-align: center;">או</h4>
               
-                    <a type="submit" href="tel:+972-52-557-7999" ><i class="fa fa-phone" aria-hidden="true"></i> Make A Call</a>
+                    <a  style="text-align: center;" type="submit" href="tel:+972-52-557-7999" ><pre class="fa fa-phone" >  בצע שיחה ישירה</pre></a>
                     <br>
-                    <a type="submit" href="sms:+972-52-557-7999" ><i class="fa fa-phone" aria-hidden="true"></i> Make A Call</a>
+                    <a  style="text-align: center;" type="submit" href="sms:972-52-557-7999?body=I'm intrested in your GDIS services" ><pre class="fa fa-envelope"> שלח מסרון ישיר</pre></a>
+                    <br>
+                    <a  style="text-align: center;" type="submit" href="whatsapp://send?phone=972525577999&text=I'm intrested in your GDIS services"><pre class="fa fa-whatsapp">  שלח הודעת וואטספ ישירה</pre></a>
+
         </div>
               
               
@@ -173,9 +177,13 @@ div {
     </div>
     
     <footer class="w3-container w3-light-blue w3-center w3-margin-top"  style="font-size:35px">
-      <p>Find me us social media.</p>
-      <i class="fa fa-facebook-official w3-hover-opacity"  style="font-size:35px"></i>
-      <i class="fa fa-linkedin-square w3-hover-opacity" style="font-size:35px"></i>
+      <pre>מצאו אותנו במדיה החברתית</pre>
+      <a href="https://www.facebook.com/profile.php?id=100009344725139" target="_blank">
+        <i class="fa fa-facebook-official w3-hover-opacity"  style="font-size:35px;color:blue"></i></a>
+      <a href="https://www.linkedin.com/in/david-rom-4b38291/" target="_blank">
+        <i class="fa fa-linkedin-square w3-hover-opacity" style="font-size:35px;color:blue"></i></a>
+      <a href="https://www.youtube.com/channel/UCZBzYwvK4HxKNdm021T00fw" target="_blank">
+        <i class="fa fa-youtube-square" style="font-size:35px;color:red" ></i></a>
     </footer>
     </div>
     </body>
